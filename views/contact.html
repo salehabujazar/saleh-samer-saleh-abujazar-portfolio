@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><!-- include: head --></head>
+<body data-page="{{page.id}}">
+<!-- include: header -->
+<main id="main" class="wrap">
+<section class="page-heading"><p class="eyebrow">{{site.brand}}</p><h1>{{contact.heading}}</h1><div class="intro">{{paragraphs:contact.intro}}</div></section>
+<div class="contact-layout">
+  <section class="contact-panel" {{hide-if-empty:contact.email}}><p class="eyebrow">{{contact.email_label}}</p><a class="contact-email" href="{{computed.email_href}}">{{contact.email}}</a><a class="button" href="{{computed.email_href}}">{{contact.email_button}} ↗</a></section>
+  <section class="contact-details"><div {{hide-if-empty:contact.location}}><p class="eyebrow">{{contact.location_label}}</p><h2>{{contact.location}}</h2></div><div id="social-links"></div></section>
+</div>
+</main>
+<!-- include: footer -->
+</body>
+</html>

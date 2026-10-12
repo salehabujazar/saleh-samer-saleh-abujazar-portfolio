@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head><!-- include: head --></head>
+<body data-page="{{page.id}}">
+<!-- include: header -->
+<main id="main" class="wrap">
+<!-- Introduction: replace every text and the optional portrait in the dashboard. -->
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">{{home.hero_eyebrow}}</p>
+    <h1>{{home.hero_name}}<span class="accent-dot" aria-hidden="true">.</span></h1>
+    <p class="hero-subtitle">{{home.hero_subtitle}}</p>
+    <p class="intro">{{home.hero_intro}}</p>
+    <div class="actions"><a class="button" href="/projects">{{home.button_projects}} <span aria-hidden="true">↗</span></a><a class="text-link" href="/cv">{{home.button_cv}} <span aria-hidden="true">→</span></a></div>
+  </div>
+  <div class="hero-art">
+    <img class="portrait" src="{{computed.portrait_url}}" alt="{{home.portrait_alt}}" {{hide-if-empty:computed.portrait_url}}>
+    <div class="arch-art" aria-hidden="true" {{hide-if-set:computed.portrait_url}}><div class="arch-sun"></div><div class="arch-door"><span>{{home.portrait_monogram}}</span></div><div class="arch-line"></div></div>
+  </div>
+</section>
+<section class="about section split"><div><p class="section-number" aria-hidden="true">01 /</p><h2>{{home.about_heading}}</h2></div><div class="prose">{{paragraphs:home.about_text}}</div></section>
+<section class="section interests"><div class="section-top"><h2>{{home.interests_heading}}</h2></div><div class="interest-grid">
+  <article><span class="interest-symbol" aria-hidden="true">{ }</span><h3>{{home.interest1_title}}</h3><p>{{home.interest1_text}}</p></article>
+  <article><span class="interest-symbol" aria-hidden="true">§</span><h3>{{home.interest2_title}}</h3><p>{{home.interest2_text}}</p></article>
+  <article><span class="interest-symbol" aria-hidden="true">↗</span><h3>{{home.interest3_title}}</h3><p>{{home.interest3_text}}</p></article>
+</div></section>
+<section id="featured-projects" class="section" hidden><div class="section-top"><h2>{{home.featured_projects_heading}}</h2><a class="text-link" href="/projects">{{home.featured_projects_link}} →</a></div><div id="project-grid" class="card-grid"></div></section>
+<section id="featured-research" class="section" hidden><div class="section-top"><h2>{{home.featured_research_heading}}</h2><a class="text-link" href="/research">{{home.featured_research_link}} →</a></div><div id="research-grid" class="card-grid"></div></section>
+<p id="content-status" role="status"></p>
+<section class="contact-band"><h2>{{home.contact_heading}}</h2><p>{{home.contact_text}}</p><a class="button" href="/contact">{{home.contact_button}} ↗</a></section>
+</main>
+<!-- include: footer -->
+</body>
+</html>
